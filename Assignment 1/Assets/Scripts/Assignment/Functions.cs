@@ -6,7 +6,7 @@ public class Functions : MonoBehaviour {
 
 	public string weather;
 
-
+// Called variable function
 	void Start(){
 
 		Weather(weather);
