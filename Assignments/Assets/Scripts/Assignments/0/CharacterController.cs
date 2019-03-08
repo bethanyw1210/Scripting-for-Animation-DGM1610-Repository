@@ -8,15 +8,22 @@ public class CharacterController : MonoBehaviour {
     public int jumpHeight = 10;
 
     //player grounded variable 
-    private bool grounded; 
+    private bool grounded;
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask whatIsGround;
     public GameObject player;
 
 	// Use this for initialization
 	void Start () {
         // defualt to true when grounded 
-        grounded = true;
+        /*grounded = true;*/
 		
 	}
+    void FixedUpdate()
+    {
+        grounded = Physics2D.OverlapCircle(groundCheck.position,groundCheckRadius,whatIsGround);
+    }
         // && = this AND that
         // || = this OR that
         // !Not this 
@@ -35,10 +42,21 @@ public class CharacterController : MonoBehaviour {
         }
 
         //makes player jump
-        else if(Input.GetKey(KeyCode.Space) && grounded)
+        if(Input.GetKey(KeyCode.Space) && grounded)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,jumpHeight); 
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,jumpHeight);
+            grounded = false;
         }
 	}
+    // Skyler showing me how to make player jump once with no double jumps
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+            grounded = true;
+    }
+    // make player jump*/
+    void Jump()
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,jumpHeight);
+    }
 
 }
