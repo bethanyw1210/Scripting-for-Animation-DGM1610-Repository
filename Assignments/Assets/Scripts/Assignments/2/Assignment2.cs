@@ -55,26 +55,40 @@ public class Assignment2 : MonoBehaviour {
             {
                 print("Espeon, I choose you!");
             }
-            else
+        }
+        {
+            if(Input.GetKey(KeyCode.Alpha1))
             {
-                print("Which eevee-lution do you want to pick?");
+                print("Flareon, I choose you!");
+            }
+            else if(Input.GetKey(KeyCode.Alpha2))
+            {
+                print("Vaporeon, I choose you!");
+            }
+            else if(Input.GetKey(KeyCode.Alpha3))
+            {
+                print("Jolteon, I choose you!");
+            }
+            else if(Input.GetKey(KeyCode.Alpha4))
+            {
+                print("Umbreon, I choose you!");
+            }
+            else if(Input.GetKey(KeyCode.Alpha5))
+            {
+                print("Leafeon, I choose you!");
+            }
+            else if(Input.GetKey(KeyCode.Alpha6))
+            {
+                print("Sylveon, I choose you!");
+            }
+            else if(Input.GetKey(KeyCode.Alpha7))
+            {
+                print("Glaceon, I choose you!");
+            }
+            else if(Input.GetKey(KeyCode.Alpha8))
+            {
+                print("Espeon, I choose you!");
             }
         }
-        /*if(fire == true)
-        {
-            print("Flareon, I choose you!");
-        }
-        else (fire == false);
-            {
-                print("Who's that eevee-lution?");
-            }
-            else(water == true);
-        {
-            print("Vaporeon, I choose you!");
-        }
-        else (water == false);
-            {
-                print("Who's that eevee-lution?");
-            }*/
-	}
+    }
 }
