@@ -16,8 +16,8 @@ public class CharacterController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        // defualt to true when grounded 
-        /*grounded = true;*/
+        // default to true when grounded 
+        grounded = true;
 		
 	}
     void FixedUpdate()
@@ -44,16 +44,19 @@ public class CharacterController : MonoBehaviour {
         //makes player jump
         if(Input.GetKey(KeyCode.Space) && grounded)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,jumpHeight);
-            grounded = false;
+            Jump();
         }
 	}
     // Skyler showing me how to make player jump once with no double jumps
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.collider.tag == "Ground")
+        {
             grounded = true;
+        }
     }
-    // make player jump*/
+
+    // make player jump
     void Jump()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x,jumpHeight);
