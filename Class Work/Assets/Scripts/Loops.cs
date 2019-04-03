@@ -14,11 +14,11 @@ public class Loops : MonoBehaviour {
 
         /*for loops
          i++ means add one*/
-        /*loops goping forward
-         * for(int i=1; i <= bottles; i++){
+        /*loops goping forward*/
+         for(int i=1; i <= bottles; i++){
             print(bottles + " bottles of toes on the wall");
         }
-        loops going backward
+        /*loops going backward
         * for(int i = 1;i > bottles;i--)
         {
             print(bottles + " bottles of toes on the wall");
@@ -30,7 +30,7 @@ public class Loops : MonoBehaviour {
         } while(shouldContinue == true);*/
 
         //ForEach Loop
-        string[] strings = new string[3];
+        /*string[] strings = new string[3];
 
         strings[0] = "First string";
         strings[1] = "Second String";
